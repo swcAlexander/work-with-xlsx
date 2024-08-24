@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compare Excel Files</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Порівняння Excel файлів</h1>
+      <form id="compareForm">
+        <input type="file" id="file1" accept=".xlsx, .xls" />
+        <label for="file1">Вибрати файл 1</label>
+        <div id="file1Name">Файл не вибрано</div>
+
+        <input type="file" id="file2" accept=".xlsx, .xls" />
+        <label for="file2">Вибрати файл 2</label>
+        <div id="file2Name">Файл не вибрано</div>
+
+        <button type="submit" id="compareButton">Порівняти</button>
+      </form>
+      <div id="resultMessage"></div>
+    </div>
+
+    <script>
+      function compareFiles() {
+        const file1 = document.getElementById('file1').files[0];
+        const file2 = document.getElementById('file2').files[0];
+
+        if (!file1 || !file2) {
+          alert('Please select both files.');
+          return;
+        }
+
+        // Тут може бути код для передачі файлів до основного JS
+        document.getElementById('result').textContent =
+          'Files selected. Processing...';
+      }
+    </script>
+  </body>
+</html>
